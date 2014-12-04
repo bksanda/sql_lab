@@ -43,6 +43,7 @@ Provide the follow sql statements below each question.
 
 	* // SELECT book.title, authors.first_name, authors_lastname, subject.subject FROM books JOIN authors ON books.author_id = authors.last_name AND books.author_id = authors.first_name JOIN subjects ON books.subject_id = subjects.subject; (NOT SURE)
 	* ANS =SELECT books.title, authors.first_name, authors.last_name, subjects.subject FROM books JOIN authors ON books.author_id = authors.id JOIN subjects ON books.subject_id = subjects.id; 
+	* ANS with concat = SELECT books.title, concat(authors.first_name, authors.last_name) AS authors_fullname, subjects.subject FROM books JOIN authors ON books.author_id = authors.id JOIN subjects ON books.subject_id = subjects.id;
 	
 * Find all books that are listed in the stock table
 	* Sort them by retail price (most expensive first)
@@ -56,7 +57,7 @@ Provide the follow sql statements below each question.
 	* Publisher name
 	* Retail price
 	
-	* //SELECT books.title, stock.isbn, publishers.name, stock.cost FROM books JOIN editions ON books.id = editions.book_id JOIN stock ON editions.isbn = stock.isbn JOIN shipments ON stock.isbn = shipments.isbn JOIN publishers ON shipments.id = publishers.id WHERE title ILIKE '%Dune%';
+	* //SELECT books.title, stock.isbn, publishers.name, stock.retail FROM books JOIN editions ON books.id = editions.book_id JOIN stock ON editions.isbn = stock.isbn JOIN shipments ON stock.isbn = shipments.isbn JOIN publishers ON shipments.id = publishers.id WHERE title ILIKE '%Dune%';
 	
 	*ANS= SELECT books.title, stock.isbn, publishers.name, stock.cost FROM books JOIN editions ON books.id = editions.book_id JOIN stock ON editions.isbn = stock.isbn JOIN publishers ON editions.publisher_id = publishers.id WHERE title ILIKE '%Dune%';  
 
