@@ -78,6 +78,6 @@ Provide the follow sql statements below each question.
 	
 	OR 
 	
-	CONCATINATE NAME
+	CONCATENATE NAME
 	
 	* SELECT books.title, authors.first_name || ' ' || authors.last_name, editions.edition FROM books JOIN authors ON books.author_id = authors.id JOIN editions ON books.id = editions.book_id WHERE edition IN (2,3);
